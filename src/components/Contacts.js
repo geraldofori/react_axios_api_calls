@@ -1,6 +1,7 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import axios from 'axios';
 import {Col, Row } from 'react-bootstrap';
+import Contact from './Contact';
 
 const Contacts = () => {
 
@@ -23,8 +24,10 @@ const Contacts = () => {
   return (
     <Fragment>
       <Row>
-        {loading && contacts.map((contacts)=>(
-          <Col sm={12} md={6} lg={4}>
+        {loading && contacts.map((contact)=>(
+          <Col sm={12} md={6} lg={4} key={contact.login.uuid}>
+            <Contact contact={contact}/>
+
           </Col>
         ))}
       </Row>
