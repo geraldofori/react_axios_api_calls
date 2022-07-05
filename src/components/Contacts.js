@@ -21,7 +21,14 @@ const Contacts = () => {
         }
     }
   return (
-    <div></div>
+    <Fragment>
+      <Row>
+        {loading && contacts.map((contacts)=>(
+          <Col sm={12} md={6} lg={4}>
+          </Col>
+        ))}
+      </Row>
+    </Fragment>
   )
 }
 
